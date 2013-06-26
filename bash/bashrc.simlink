@@ -1,0 +1,28 @@
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+alias ls='/bin/ls -FG'
+alias l='/bin/ls -FGalrt'
+alias h='/bin/ls -FGalrt'
+alias irb='irb --readline -r irb/completion'
+
+alias gs='git status'
+alias gg='git grep -i'
+
+alias sr='ssh rudy.huddler.com'
+alias sn='ssh newdy.huddler.com'
+
+alias pu='phpunit --stderr'
+alias gentags='ctags -R --sort=yes --languages=+PHP,-JavaScript --verbose=yes --exclude=@$HOME/.ctags.exclude'
+
+alias ma='ack --ignore-dir logs --ignore-dir log'
+
+if [[ -f "$HOME/.amazon_keys" ]]; then
+    . "$HOME/.amazon_keys";
+fi
+
+if [[ -f "$HOME/.bash_functions" ]]; then
+    . "$HOME/.bash_functions";
+fi
+
+PS1="\u:\W \$ "
+set -o vi

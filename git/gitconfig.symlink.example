@@ -10,18 +10,20 @@
         helper = osxkeychain
 [alias]
         co = checkout
-        promote = !$ZSH/bin/git-promote
-        wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
         count   = !git shortlog -sn
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr by %an)%Creset' --abbrev-commit --date=relative
 [color]
         diff = auto
         status = auto
         branch = auto
         ui = true
+[color "diff"]
+        whitespace = red reverse
 [core]
         excludesfile = ~/.gitignore
         editor = vim
+        filemode = true
+        whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [apply]
         whitespace = nowarn
 [mergetool]
@@ -35,4 +37,4 @@
         # for more information on different options of the below setting.
         #
         # Setting to git 2.0 default to surpress warning message
-        default = simple
+        default = upstream
