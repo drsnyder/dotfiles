@@ -208,8 +208,8 @@ augroup END
 au VimEnter * highlight clear SignColumn
 
 " Highlight 81st column
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+"set colorcolumn=+1
 
 "-------------------------------------------------------------------------------
 " Abbreviations
@@ -401,6 +401,7 @@ let g:autoclose_vim_commentmode = 1
 
 " Slime config
 let g:slime_paste_file = tempname()
+let g:slime_target = "tmux"
 "vmap <leader>tt "ry :call Send_to_Tmux(@r)<CR>
 "nmap <leader>tt vip<leader>tt
 
