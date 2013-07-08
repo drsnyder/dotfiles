@@ -1,4 +1,5 @@
 let g:spf13_no_autochdir = 1
+let g:spf13_no_fastTabs = 1
 
 Bundle "vim-less"
 "Bundle "VimClojure"
