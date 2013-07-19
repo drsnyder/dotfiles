@@ -1,0 +1,5 @@
+require(ggplot2)
+require(reshape2)
+require(stats)
+require(data.table)
+options(menu.graphics=FALSE)
