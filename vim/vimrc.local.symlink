@@ -308,7 +308,7 @@ let g:ctrlp_user_command = {
 
 " Ack
 nnoremap <leader>ack :Ack!<space>
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ack --ignore-dir logs --ignore-dir tmp --ignore-dir vendor --ignore-dir log --nogroup --nocolor --column'
 
 " Tagbar
 "" Move focus to tagbar when it opens to make it usable for windows on right side
