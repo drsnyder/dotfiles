@@ -1,8 +1,3 @@
-let g:spf13_no_autochdir = 1
-let g:spf13_no_fastTabs = 1
-
-Bundle "vim-less"
-"Bundle "VimClojure"
 Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-classpath"
 Bundle "guns/vim-clojure-static"
@@ -12,3 +7,13 @@ Bundle "jnwhiteh/vim-golang"
 Bundle "smerrill/vcl-vim-plugin"
 Bundle "StanAngeloff/php.vim"
 Bundle "jpalardy/vim-slime"
+
+" Disable neo* plugins
+UnBundle 'Shougo/neocomplcache'
+UnBundle 'Shougo/neosnippet'
+UnBundle 'mbbill/undotree'
+UnBundle 'arnaud-lb/vim-php-namespace'
+UnBundle 'spf13/PIV'
+UnBundle 'myusuf3/numbers.vim'
+UnBundle 'bling/vim-bufferline'
+
