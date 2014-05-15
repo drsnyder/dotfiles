@@ -1,0 +1,67 @@
+function getRockyDbs() {
+    if [ "$1X" == "X" ]; then
+        date=`date "+%Y-%m-%d"`
+    else
+        date=$1
+    fi
+    [[ ! -d $HOME/dbdumps ]] && mkdir $HOME/dbdumps
+    mkdir -p $HOME/dbdumps/$date;
+    for i in huddler_bs huddler_demo huddler_epicski huddler_greenhome huddler_gymnastics huddler_mobile; do 
+        if [ "$2X" == "X" ]; then
+            scp "$USER@rocky.huddler.com:/home/backups/pgsql_backups/daily/$i/*$date*.gz" $HOME/dbdumps/$date; 
+        else 
+            if [ "$2" = "$i" ]; then
+                scp "$USER@rocky.huddler.com:/home/backups/pgsql_backups/daily/$i/*$date*.gz" $HOME/dbdumps/$date; 
+            fi 
+        fi
+    done;
+    cd $HOME/dbdumps/;
+    gunzip "*$date*.gz";
+    cd -;
+}
+
+function getRagingDbs() {
+    if [ "$1X" == "X" ]; then
+        date=`date "+%Y-%m-%d"`
+    else
+        date=$1
+    fi
+    [[ ! -d $HOME/dbdumps ]] && mkdir $HOME/dbdumps
+    mkdir -p $HOME/dbdumps/$date;
+    for i in huddler_htf; do 
+        if [ "$2X" == "X" ]; then
+            scp "$USER@ragingbull.huddler.com:/home/backups/pgsql_backups/daily/$i/*$date*.gz" $HOME/dbdumps/$date; 
+        else 
+            if [ "$2" = "$i" ]; then
+                scp "$USER@ragingbull.huddler.com:/home/backups/pgsql_backups/daily/$i/*$date*.gz" $HOME/dbdumps/$date; 
+            fi
+        fi
+    done;
+    cd $HOME/dbdumps/;
+    gunzip "*$date*.gz";
+    cd -;
+}
+
+# $1 is server e.g. rocky
+# $2 is db
+function download_db() {
+    date=`date "+%Y-%m-%d"`
+
+    rsync -avzP --stats "$USER@app003.huddler.com:/huddler/backups/dbs/$1/daily/$2/$2*$date*.gz" $HOME/dbdumps/$date/; 
+    if [ $? -ne 0 ]; then
+        ssh $USER@app003.huddler.com "ls -l /huddler/backups/dbs/$1/daily/$2/$2*"
+    fi
+}
+
+function prompt_git_branch {
+ ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+ echo "git("${ref#refs/heads/}")"
+}
+
+function tabname {
+  printf "\e]1;$1\a"
+}
+
+function winname {
+  printf "\e]2;$1\a"
+}

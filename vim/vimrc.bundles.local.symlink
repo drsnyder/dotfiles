@@ -7,6 +7,8 @@ Bundle "jnwhiteh/vim-golang"
 Bundle "smerrill/vcl-vim-plugin"
 Bundle "StanAngeloff/php.vim"
 Bundle "jpalardy/vim-slime"
+" Is this needed?
+Bundle "jcfaria/Vim-R-plugin"
 
 " Disable neo* plugins
 UnBundle 'Shougo/neocomplcache'
@@ -18,4 +20,3 @@ UnBundle 'myusuf3/numbers.vim'
 UnBundle 'bling/vim-bufferline'
 UnBundle 'jistr/vim-nerdtree-tabs'
 UnBundle 'nathanaelkane/vim-indent-guides'
-

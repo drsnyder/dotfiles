@@ -397,8 +397,10 @@ let g:autoclose_vim_commentmode = 1
 let g:slime_paste_file = tempname()
 let g:slime_target = "tmux"
 
+let vimrplugin_screenplugin = 0
 
 colorscheme ir_black
 
 let g:syntastic_check_on_open=0
 let g:syntastic_php_checkers=['/usr/bin/php']
+let g:gitgutter_realtime = 0

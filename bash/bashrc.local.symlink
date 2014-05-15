@@ -10,18 +10,19 @@ alias gg='git grep -i'
 
 alias sr='ssh rudy.huddler.com'
 alias sn='ssh newdy.huddler.com'
+alias wikia-dev='ssh damon@dev-damon'
 
 alias pu='phpunit --stderr'
 alias gentags='ctags -R --sort=yes --languages=+PHP,-JavaScript --verbose=yes --exclude=@$HOME/.ctags.exclude'
 
-alias ma='ack --ignore-dir logs --ignore-dir log'
+alias ma='ack --ignore-dir logs --ignore-dir log --ignore-dir tmp'
 
 if [[ -f "$HOME/.amazon_keys" ]]; then
     . "$HOME/.amazon_keys";
 fi
 
 if [[ -f "$HOME/.bash_functions" ]]; then
-    . "$HOME/.bash_functions";
+    . "$HOME/.bash_functions.local";
 fi
 
 PS1="\u:\W \$ "
