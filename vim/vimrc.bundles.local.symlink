@@ -20,3 +20,5 @@ UnBundle 'myusuf3/numbers.vim'
 UnBundle 'bling/vim-bufferline'
 UnBundle 'jistr/vim-nerdtree-tabs'
 UnBundle 'nathanaelkane/vim-indent-guides'
+UnBundle 'majutsushi/tagbar'
+
