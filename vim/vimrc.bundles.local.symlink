@@ -16,4 +16,6 @@ UnBundle 'arnaud-lb/vim-php-namespace'
 UnBundle 'spf13/PIV'
 UnBundle 'myusuf3/numbers.vim'
 UnBundle 'bling/vim-bufferline'
+UnBundle 'jistr/vim-nerdtree-tabs'
+UnBundle 'nathanaelkane/vim-indent-guides'
 
