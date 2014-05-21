@@ -1,0 +1,3 @@
+{:user  {:plugins  [[lein-midje "3.0.0"]]}
+ :poky {:jvm-opts ["-Dpoky.home=/Users/drsnyder/playground/poky"]}
+ :casino {:jmp-opts ["-Dcasino.home=/Users/drsnyder/Huddler/casino"]}}
