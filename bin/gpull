@@ -1,0 +1,9 @@
+#!/bin/bash
+branch=$(git name-rev --name-only HEAD)
+if [ "$1x" == "x" ]; then
+    echo "git pull origin $branch"
+    git pull origin $branch
+else 
+    echo "git pull $1 origin $branch"
+    git pull $1 origin $branch
+fi

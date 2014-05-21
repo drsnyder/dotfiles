@@ -1,0 +1,4 @@
+#!/bin/bash
+branch=$(git name-rev --name-only HEAD)
+echo "git push origin $branch"
+git push origin $branch
