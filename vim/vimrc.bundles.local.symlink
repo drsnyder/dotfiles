@@ -9,6 +9,7 @@ Bundle "StanAngeloff/php.vim"
 Bundle "jpalardy/vim-slime"
 " Is this needed?
 Bundle "jcfaria/Vim-R-plugin"
+Bundle "joonty/vdebug.git"
 
 " Disable neo* plugins
 UnBundle 'Shougo/neocomplcache'

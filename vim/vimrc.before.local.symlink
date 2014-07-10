@@ -5,4 +5,11 @@ let g:spf13_bundle_groups=['general', 'writing', 'programming', 'misc',]
 let g:spf13_no_fastTabs = 1
 let g:spf13_no_autochdir = 1
 let g:spf13_no_neosnippet_expand = 1
-"let g:DisableAutoPHPFolding = 1
+
+" https://github.com/bling/vim-airline/wiki/Screenshots
+let g:airline_theme="luna"
+
+
+if (filereadable(expand("~/.vimrc.local.dev")))
+  source ~/.vimrc.local.dev
+endif
