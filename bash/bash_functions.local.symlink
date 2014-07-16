@@ -65,3 +65,10 @@ function tabname {
 function winname {
   printf "\e]2;$1\a"
 }
+
+function xdebug {
+  local command=$*;
+  local xdebug="XDEBUG_CONFIG=\"idekey=phpstorm1\" PHP_IDE_CONFIG=\"serverName=localhost\" ${command}";
+
+  eval $xdebug;
+}
