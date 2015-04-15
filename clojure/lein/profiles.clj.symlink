@@ -1,3 +1,5 @@
-{:user  {:plugins  [[lein-midje "3.0.0"]]}
- :poky {:jvm-opts ["-Dpoky.home=/Users/drsnyder/playground/poky"]}
+{:user  {:plugins  [[lein-midje "3.0.0"]]
+         :dependencies [[org.clojure/tools.trace "0.7.8"]
+                        [midje "1.6.3"]]}
+ :poky {:jvm-opts ["-Dpoky.home=/Users/damonsnyder/FOSS/poky"]}
  :casino {:jmp-opts ["-Dcasino.home=/Users/drsnyder/Huddler/casino"]}}

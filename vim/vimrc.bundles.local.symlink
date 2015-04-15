@@ -7,6 +7,8 @@ Bundle "jnwhiteh/vim-golang"
 Bundle "smerrill/vcl-vim-plugin"
 Bundle "StanAngeloff/php.vim"
 Bundle "jpalardy/vim-slime"
+Bundle "rizzatti/dash.vim"
+Bundle "tpope/vim-leiningen"
 " Is this needed?
 Bundle "jcfaria/Vim-R-plugin"
 Bundle "joonty/vdebug.git"

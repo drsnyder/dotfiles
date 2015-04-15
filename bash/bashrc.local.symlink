@@ -8,22 +8,33 @@ alias irb='irb --readline -r irb/completion'
 alias gs='git status'
 alias gg='git grep -i'
 
-alias sr='ssh rudy.huddler.com'
-alias sn='ssh newdy.huddler.com'
+alias sr='ssh drsnyder@rudy.huddler.com'
+alias sn='ssh drsnyder@newdy.huddler.com'
 alias wikia-dev='ssh damon@dev-damon'
 
 alias pu='phpunit --stderr'
 alias gentags='ctags -R --sort=yes --languages=+PHP,-JavaScript --verbose=yes --exclude=@$HOME/.ctags.exclude'
 
-alias ma='ack --ignore-dir logs --ignore-dir log --ignore-dir tmp'
+alias ack='ack --ignore-dir logs --ignore-dir log --ignore-dir tmp'
+
+alias wikiatmux='tmux attach-session -d -twikia'
 
 if [[ -f "$HOME/.amazon_keys" ]]; then
     . "$HOME/.amazon_keys";
 fi
 
-if [[ -f "$HOME/.bash_functions" ]]; then
+if [[ -f "$HOME/.bash_functions.local" ]]; then
     . "$HOME/.bash_functions.local";
 fi
 
 PS1="\u:\W \$ "
 set -o vi
+
+export PERL5LIB=/Users/damonsnyder/perl5/lib/perl5
+export PERL_MB_OPT='--install_base "/Users/damonsnyder/perl5"'
+export PERL_LOCAL_LIB_ROOT=/Users/damonsnyder/perl5
+export PERL_MM_OPT=INSTALL_BASE=/Users/damonsnyder/perl5
+
+export PATH=~/.cabal/bin:$PATH
+export PATH=~/local/bin:$PATH
+export PATH=$PATH:/usr/local/Cellar/openresty/1.7.2.1/luajit/bin/

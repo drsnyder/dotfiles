@@ -5,7 +5,7 @@ set shell=/bin/sh
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set noexpandtab
+set expandtab
 set autoindent
 set smartindent
 set nu
@@ -40,6 +40,16 @@ fun! SetWikiaPHPWhitespace()
   setlocal ts=2 sts=2 sw=2 noexpandtab nofoldenable nolist
 endfun
 
+fun! DisableParedit()
+	let g:paredit_mode=0
+endfun
+
+fun! EnableParedit()
+	let g:paredit_mode=1
+endfun
+
+
+
 if (exists('g:local_dev'))
   if (g:local_dev ==? "huddler")
     autocmd BufNewFile,BufRead */huddler/* call SetHuddlerWhitespace()
@@ -72,6 +82,9 @@ augroup ft_clojure
   au Filetype clojure nnoremap <localleader>ef :%Eval<CR>
   au Filetype clojure nnoremap <localleader>er :Require<CR>
   au Filetype clojure nnoremap <localleader>eR :Require!<CR>
+
+	au FileType clojure nnoremap <localleader>dpe :call DisableParedit()<CR>
+	au FileType clojure nnoremap <localleader>epe :call EnableParedit()<CR>
 augroup END
 
 "-------------------------------------------------------------------------------
@@ -105,7 +118,7 @@ au Syntax * RainbowParenthesesLoadBraces
 let $JS_CMD='node'
 
 
-" VimClojure
+" VimClojure / Clojure
 "let g:vimclojure#WantNailgun = 1
 "let g:vimclojure#NailgunClient = $HOME."/vimclojure/client/ng"
 "let g:vimclojure#HighlightBuiltins = 1
@@ -117,6 +130,8 @@ let $JS_CMD='node'
 
 " Paredit
 "let g:paredit_electric_return=1
+noremap <leader>dpare :let g:paredit_mode = 0<CR>
+noremap <leader>epare :let g:paredit_mode = 1<CR>
 
 " Syntastic
 let g:syntastic_auto_loc_list = 1
@@ -219,6 +234,7 @@ nmap <leader>tp <Esc>:tabp<CR>
 noremap <leader>pl :!php -l %<CR>
 iabbrev Damon Damon Snyder (damon@huddler-inc.com)
 iabbrev Author:: Author:: Damon Snyder (mailto:damon@huddler-inc.com) 
+
 " disable beeping
 set noerrorbells
 set visualbell
