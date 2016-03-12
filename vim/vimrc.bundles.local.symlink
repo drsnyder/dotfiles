@@ -9,6 +9,7 @@ Bundle "StanAngeloff/php.vim"
 Bundle "jpalardy/vim-slime"
 Bundle "rizzatti/dash.vim"
 Bundle "tpope/vim-leiningen"
+Bundle "fatih/vim-go"
 " Is this needed?
 Bundle "jcfaria/Vim-R-plugin"
 Bundle "joonty/vdebug.git"
@@ -24,4 +25,3 @@ UnBundle 'bling/vim-bufferline'
 UnBundle 'jistr/vim-nerdtree-tabs'
 UnBundle 'nathanaelkane/vim-indent-guides'
 UnBundle 'majutsushi/tagbar'
-

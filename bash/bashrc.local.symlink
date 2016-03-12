@@ -19,6 +19,8 @@ alias ack='ack --ignore-dir logs --ignore-dir log --ignore-dir tmp'
 
 alias wikiatmux='tmux attach-session -d -twikia'
 
+alias heliosdev='. $HOME/Wikia/source/wikia-go/env.sh && cd $GOPATH/src/github.com/Wikia/helios'
+
 if [[ -f "$HOME/.amazon_keys" ]]; then
     . "$HOME/.amazon_keys";
 fi
@@ -38,3 +40,10 @@ export PERL_MM_OPT=INSTALL_BASE=/Users/damonsnyder/perl5
 export PATH=~/.cabal/bin:$PATH
 export PATH=~/local/bin:$PATH
 export PATH=$PATH:/usr/local/Cellar/openresty/1.7.2.1/luajit/bin/
+
+export GOPATH=~/local/go
+export PATH=$PATH:$GOPATH/bin
+
+
+
+source /usr/local/opt/autoenv/activate.sh

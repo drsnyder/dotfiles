@@ -1,0 +1,3 @@
+#!/bin/bash
+pref=$1
+ag -i "get(bool|int)?option\((\s+)?('|\")$pref"

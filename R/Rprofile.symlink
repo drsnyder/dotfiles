@@ -6,3 +6,7 @@ require(data.table)
 require(dplyr)
 require(psych) # describeBy
 options(menu.graphics=FALSE)
+
+wideScreen <- function(howWide=Sys.getenv("COLUMNS")) {
+  options(width=as.integer(howWide))
+}

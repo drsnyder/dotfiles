@@ -72,3 +72,24 @@ function xdebug {
 
   eval $xdebug;
 }
+
+function dssh {
+  local server=$1;
+  local port=$2
+
+  if [ -z "$server"  ]
+  then
+    server=dev-damon;
+  fi;
+
+  if [[ -z $port || $port -eq 0 ]]
+  then
+    port=9000;
+  fi;
+
+  command="ssh -o ServerAliveInterval=20 -R $port:localhost:$port $server";
+  echo $command
+  eval $command
+}
+
+

@@ -13,3 +13,8 @@ let g:airline_theme="luna"
 if (filereadable(expand("~/.vimrc.local.dev")))
   source ~/.vimrc.local.dev
 endif
+
+
+" fix issue with omnicomplete in spf13
+" https://github.com/spf13/spf13-vim/issues/567
+let g:spf13_no_omni_complete = 1

@@ -1,2 +1,2 @@
-(require readline/rep)
-(require mzlib/trace)
+(require readline)
+(require readline/rep-start)
