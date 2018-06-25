@@ -148,6 +148,9 @@ let $JS_CMD='node'
 noremap <leader>dpare :let g:paredit_mode = 0<CR>
 noremap <leader>epare :let g:paredit_mode = 1<CR>
 
+" rename variable
+nnoremap <Leader>r :%s/\<<C-r><C-w>\>//gc<Left><Left><Left>
+
 " Syntastic
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_javascript_jsl_conf = "-conf ~/.jslconf"
@@ -271,7 +274,10 @@ let g:slime_target = "tmux"
 
 let vimrplugin_screenplugin = 0
 
-colorscheme ir_black
+" colorscheme ir_black
+syntax enable
+set background=light
+colorscheme solarized
 
 let g:syntastic_check_on_open=0
 let g:syntastic_php_checkers=['/usr/bin/php']
@@ -293,3 +299,5 @@ let g:vdebug_options = {
 \}
 
 hi Visual term=reverse cterm=reverse guibg=Grey
+
+autocmd BufWritePost *.py call Flake8()

@@ -5,6 +5,7 @@ let g:spf13_bundle_groups=['general', 'writing', 'programming', 'misc',]
 let g:spf13_no_fastTabs = 1
 let g:spf13_no_autochdir = 1
 let g:spf13_no_neosnippet_expand = 1
+let g:jsx_ext_required = 0
 
 " https://github.com/bling/vim-airline/wiki/Screenshots
 let g:airline_theme="luna"

@@ -41,9 +41,16 @@ export PATH=~/.cabal/bin:$PATH
 export PATH=~/local/bin:$PATH
 export PATH=$PATH:/usr/local/Cellar/openresty/1.7.2.1/luajit/bin/
 
-export GOPATH=~/local/go
-export PATH=$PATH:$GOPATH/bin
+export GOPATH=/Users/damonsnyder/Wikia/source/wikia-go-root
+export GOROOT=/usr/local/go
 
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:/usr/local/mysql/bin
 
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+HISTCONTROL='ignoreboth'
+PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
-source /usr/local/opt/autoenv/activate.sh
+#source /usr/local/opt/autoenv/activate.sh
