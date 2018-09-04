@@ -21,15 +21,25 @@ alias wikiatmux='tmux attach-session -d -twikia'
 
 alias heliosdev='. $HOME/Wikia/source/wikia-go/env.sh && cd $GOPATH/src/github.com/Wikia/helios'
 
+alias cat='bat'
+alias ping='prettyping'
+
 if [[ -f "$HOME/.amazon_keys" ]]; then
     . "$HOME/.amazon_keys";
+fi
+
+if [[ -f "$HOME/.github_keys" ]]; then
+    . "$HOME/.github_keys";
 fi
 
 if [[ -f "$HOME/.bash_functions.local" ]]; then
     . "$HOME/.bash_functions.local";
 fi
 
-PS1="\u:\W \$ "
+# https://github.com/junegunn/fzf
+[ -f ~/.fzf.bash  ] && . ~/.fzf.bash
+
+export PS1="laptop: \W \$ "
 set -o vi
 
 export PERL5LIB=/Users/damonsnyder/perl5/lib/perl5
@@ -51,6 +61,7 @@ shopt -s histappend
 shopt -s histreedit
 shopt -s histverify
 HISTCONTROL='ignoreboth'
+HISTSIZE=10000
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #source /usr/local/opt/autoenv/activate.sh

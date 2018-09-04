@@ -276,7 +276,7 @@ let vimrplugin_screenplugin = 0
 
 " colorscheme ir_black
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 let g:syntastic_check_on_open=0
@@ -292,11 +292,6 @@ let vimrplugin_assign = 2
 "\ 	"/archive/var/www/html/drsnyder/tools/cli": "/Users/damonsnyder/Huddler/source/huddler/tools/cli",
 "\  },
 "\}
-let g:vdebug_options = {
-\	'path_maps': {
-\ 	"/archive/var/www/html/drsnyder": "/Users/damonsnyder/Huddler/source/huddler",
-\  },
-\}
 
 hi Visual term=reverse cterm=reverse guibg=Grey
 
