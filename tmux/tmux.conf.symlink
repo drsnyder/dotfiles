@@ -9,12 +9,12 @@ set -sg escape-time 0
 set -sg repeat-time 600
 
 # Shut up
-set -g quiet on
+# set -g quiet on
 
 # Mouse
-set -g mode-mouse on
-setw -g mouse-select-window on
-setw -g mouse-select-pane on
+# set -g mode-mouse on
+# setw -g mouse-select-window on
+# setw -g mouse-select-pane on
 
 # This is hilariously absurd.  How many nerds use tmux on OS X every day and
 # it's still fundamentally broken?
@@ -102,9 +102,9 @@ bind ` copy-mode
 unbind [
 unbind p
 bind p paste-buffer
-bind -t vi-copy v begin-selection
-bind -t vi-copy y copy-selection
-bind -t vi-copy Escape cancel
+bind-key -Tcopy-mode-vi 'v' send -X begin-selection
+bind-key -Tcopy-mode-vi 'y' send -X copy-selection
+# bind-key -Tcopy-mode-vi 'Escape' cancel
 #bind y run "tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
 # Window movement
@@ -115,9 +115,10 @@ bind -r [ previous-window
 #### COLOUR (Solarized light)
 #
 # default statusbar colors
-set-option -g status-bg white #base2
+# set-option -g status-bg white #base2
 set-option -g status-fg yellow #yellow
 set-option -g status-attr default
+set-option -g status-style "fg=white"
 
 # default window title colors
 set-window-option -g window-status-fg brightyellow #base00

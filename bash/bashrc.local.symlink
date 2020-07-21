@@ -13,7 +13,7 @@ alias sn='ssh drsnyder@newdy.huddler.com'
 alias wikia-dev='ssh damon@dev-damon'
 
 alias pu='phpunit --stderr'
-alias gentags='ctags -R --sort=yes --languages=+PHP,-JavaScript --verbose=yes --exclude=@$HOME/.ctags.exclude'
+alias gentags='ctags -R --sort=yes --languages=+PHP,-JavaScript,+Python --verbose=yes --exclude=@$HOME/.ctags.exclude'
 
 alias ack='ack --ignore-dir logs --ignore-dir log --ignore-dir tmp'
 
@@ -23,6 +23,11 @@ alias heliosdev='. $HOME/Wikia/source/wikia-go/env.sh && cd $GOPATH/src/github.c
 
 alias cat='bat'
 alias ping='prettyping'
+alias cs='cypher-shell'
+
+alias jenkins-jobs='docker run -it -w `pwd` -v `pwd`:`pwd`:rw artifactory.wikia-inc.com/jenkins/jenkins-jobs'
+
+alias prep-unmerged='git ls-files --unmerged | cut -f2 | sort -u | xargs git add'
 
 if [[ -f "$HOME/.amazon_keys" ]]; then
     . "$HOME/.amazon_keys";
@@ -51,7 +56,7 @@ export PATH=~/.cabal/bin:$PATH
 export PATH=~/local/bin:$PATH
 export PATH=$PATH:/usr/local/Cellar/openresty/1.7.2.1/luajit/bin/
 
-export GOPATH=/Users/damonsnyder/Wikia/source/wikia-go-root
+export GOPATH=/Users/damonsnyder/Wikia/wikia-go-root
 export GOROOT=/usr/local/go
 
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
@@ -65,3 +70,11 @@ HISTSIZE=10000
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 #source /usr/local/opt/autoenv/activate.sh
+export VAULT_ADDR=https://active.vault.service.sjc.consul:8200
+alias vault-login="vault login -address=$VAULT_ADDR -method=userpass -path=file username=damon"
+
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home
+
+eval "$(pyenv init -)"
+#eval "$(jenv init -)"
+eval "$(direnv hook bash)"
