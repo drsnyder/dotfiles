@@ -1,0 +1,29 @@
+Bundle "tpope/vim-fireplace"
+Bundle "tpope/vim-classpath"
+Bundle "guns/vim-clojure-static"
+Bundle "kien/rainbow_parentheses.vim"
+Bundle "paredit.vim"
+Bundle "jnwhiteh/vim-golang"
+Bundle "smerrill/vcl-vim-plugin"
+Bundle "StanAngeloff/php.vim"
+Bundle "jpalardy/vim-slime"
+Bundle "rizzatti/dash.vim"
+Bundle "tpope/vim-leiningen"
+Bundle "fatih/vim-go"
+Bundle "nvie/vim-flake8"
+Bundle "mxw/vim-jsx"
+" Is this needed?
+Bundle "jcfaria/Vim-R-plugin"
+" Bundle "joonty/vdebug.git"
+
+" Disable neo* plugins
+UnBundle 'Shougo/neocomplcache'
+UnBundle 'Shougo/neosnippet'
+UnBundle 'mbbill/undotree'
+UnBundle 'arnaud-lb/vim-php-namespace'
+UnBundle 'spf13/PIV'
+UnBundle 'myusuf3/numbers.vim'
+UnBundle 'bling/vim-bufferline'
+UnBundle 'jistr/vim-nerdtree-tabs'
+UnBundle 'nathanaelkane/vim-indent-guides'
+UnBundle 'majutsushi/tagbar'

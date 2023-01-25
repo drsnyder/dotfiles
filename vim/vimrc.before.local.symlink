@@ -1,0 +1,25 @@
+set nofoldenable
+set noexpandtab
+set nolist
+let g:spf13_bundle_groups=['general', 'writing', 'programming', 'misc',]
+let g:spf13_no_fastTabs = 1
+let g:spf13_no_autochdir = 1
+let g:spf13_no_neosnippet_expand = 1
+let g:jsx_ext_required = 0
+
+" https://github.com/bling/vim-airline/wiki/Screenshots
+let g:airline_theme="luna"
+
+
+if (filereadable(expand("~/.vimrc.local.dev")))
+  source ~/.vimrc.local.dev
+endif
+
+
+" fix issue with omnicomplete in spf13
+" https://github.com/spf13/spf13-vim/issues/567
+let g:spf13_no_omni_complete = 1
+
+" python
+let g:syntastic_python_checkers=["flake8"]
+let g:syntastic_python_flake8_args="--ignore=E999,E501"
