@@ -250,8 +250,6 @@ endif
 nmap <leader>tn <Esc>:tabn<CR>
 nmap <leader>tp <Esc>:tabp<CR>
 noremap <leader>pl :!php -l %<CR>
-iabbrev Damon Damon Snyder (damon@huddler-inc.com)
-iabbrev Author:: Author:: Damon Snyder (mailto:damon@huddler-inc.com) 
 
 " disable beeping
 set noerrorbells
@@ -311,10 +309,10 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 let python_highlight_all=1
 syntax on
 
-"au FileType python setlocal formatprg=autopep8\ -
-"if has("autocmd")
-  "autocmd BufWritePost *.py silent! execute "!autopep8 -i % 2>&1 /dev/null"
-"endif
+au FileType python setlocal formatprg=autopep8\ -
+if has("autocmd")
+  autocmd BufWritePost *.py silent! execute "!autopep8 -i % 2>&1 /dev/null"
+endif
 
 " https://stackoverflow.com/a/24449080/8243
 au FileType python setlocal formatprg=autopep8\ -aa\ --indent-size\ 0\ -
@@ -327,3 +325,6 @@ au BufNewFile,BufRead *.js,*.html,*.css
 if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
+
+set rtp+=/usr/local/opt/fzf
+

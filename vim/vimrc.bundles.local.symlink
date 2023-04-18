@@ -14,7 +14,7 @@ Bundle "nvie/vim-flake8"
 Bundle "mxw/vim-jsx"
 " Is this needed?
 Bundle "jcfaria/Vim-R-plugin"
-" Bundle "joonty/vdebug.git"
+Bundle 'junegunn/fzf.vim'
 
 " Disable neo* plugins
 UnBundle 'Shougo/neocomplcache'
