@@ -16,7 +16,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle jeffreytse/zsh-vi-mode
 
 # Load the theme.
-antigen theme clean
+# antigen theme clean
+antigen theme robbyrussell/oh-my-zsh themes/apple
 
 # Tell Antigen that you're done.
 antigen apply
