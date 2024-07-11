@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SESSION=rust
+
+if ! tmux list-session | grep "$SESSION"; then
+  tmux new-session -d -s "$SESSION"
+  tmux rename-window -t 0 'main'
+  tmux split-window -v 
+  tmux new-window -t "$SESSION":1 -n 'rust'
+  tmux split-window -v 
+fi
+
+tmux attach-session -t "$SESSION":0
