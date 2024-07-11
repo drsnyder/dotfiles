@@ -55,4 +55,8 @@ then
   source ~/.localrc
 fi
 
-
+if type direnv &> /dev/null; then
+  eval "$(direnv hook zsh)"
+else
+  echo "(brew) install direnv"
+fi
